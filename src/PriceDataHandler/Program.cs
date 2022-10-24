@@ -4,9 +4,9 @@ class Program
     static async Task Main(string[] args)
     {
 
-        // var configLocation = args[0];
+        var configLocation = args[0];
         System.Console.WriteLine("Got arguments");
-        var configLocation = "c:/Pricedata/config.json";
+        // var configLocation = "c:/Pricedata/config.json";
         var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         try

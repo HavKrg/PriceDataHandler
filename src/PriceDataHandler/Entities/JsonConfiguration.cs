@@ -6,5 +6,4 @@ public class JsonConfiguration
     public string? APIareaId { get; set; }
     public string? APIdate { get; set; }
     public string? PriceHistoryLocation { get; set; }
-    public string? baseLocation { get; set; }
 }

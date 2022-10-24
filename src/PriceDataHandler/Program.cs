@@ -6,6 +6,7 @@ class Program
         var configLocation = args[0];
         var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
+        System.Console.WriteLine(new StreamReader(configLocation).ReadToEnd());
         var myConf = JsonSerializer.Deserialize<JsonConfiguration>(new StreamReader(configLocation).ReadToEnd(), jsonOptions);
         
         var priceFile = $"{myConf.PriceFile}";

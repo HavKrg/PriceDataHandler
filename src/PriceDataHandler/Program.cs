@@ -5,23 +5,30 @@ class Program
     {
 
         // var configLocation = args[0];
+        System.Console.WriteLine("Got arguments");
         var configLocation = "c:/Pricedata/config.json";
         var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         try
         {
             var myConf = JsonSerializer.Deserialize<JsonConfiguration>(new StreamReader(configLocation).ReadToEnd(), jsonOptions);
+            System.Console.WriteLine("parsed config");
 
             var jsonPrices = HelperFunctions.FormatPriceData(myConf.PriceFile);
+            System.Console.WriteLine("parsed prices");
 
-            await File.WriteAllTextAsync(myConf.JsonPriceFileNameFormat, jsonPrices);
+            
 
             var priceData = JsonSerializer.Deserialize<List<PriceItemBuffer>>(jsonPrices, jsonOptions);
 
             var dailyPrices = HelperFunctions.CreateDailyPrices(priceData);
 
-            await HelperFunctions.PostAsync(new HttpClient(), new APIRequest(dailyPrices, myConf.APIbaseURI,
-            myConf.APIareaId, myConf.APIdate));
+            var apiRequest = new APIRequest(dailyPrices, myConf.APIbaseURI, myConf.APIareaId);
+
+            await File.WriteAllTextAsync(apiRequest.Date, jsonPrices);
+            System.Console.WriteLine("Wrote prices");
+
+            await HelperFunctions.PostAsync(new HttpClient(), apiRequest);
 
         }
         catch (System.Exception ex)

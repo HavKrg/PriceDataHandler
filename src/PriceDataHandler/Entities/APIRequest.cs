@@ -6,7 +6,7 @@ class APIRequest
     public string  AreaId { get; set; }
     public string  Date { get; set; }
 
-    public APIRequest(DailyPrices dailyPrices, string baseURI, string areaId, string date)
+    public APIRequest(DailyPrices dailyPrices, string baseURI, string areaId)
     {
         DailyPrices = dailyPrices;
         BaseURI = baseURI;

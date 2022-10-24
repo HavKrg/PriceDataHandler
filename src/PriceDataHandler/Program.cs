@@ -12,12 +12,8 @@ class Program
         try
         {
             var myConf = JsonSerializer.Deserialize<JsonConfiguration>(new StreamReader(configLocation).ReadToEnd(), jsonOptions);
-            System.Console.WriteLine("parsed config");
 
             var jsonPrices = HelperFunctions.FormatPriceData(myConf.PriceFile);
-            System.Console.WriteLine("parsed prices");
-
-            
 
             var priceData = JsonSerializer.Deserialize<List<PriceItemBuffer>>(jsonPrices, jsonOptions);
 
@@ -25,8 +21,7 @@ class Program
 
             var apiRequest = new APIRequest(dailyPrices, myConf.APIbaseURI, myConf.APIareaId);
 
-            await File.WriteAllTextAsync(apiRequest.Date, jsonPrices);
-            System.Console.WriteLine("Wrote prices");
+            await File.WriteAllTextAsync($"{myConf.PriceHistoryLocation}{apiRequest.Date}.json", jsonPrices);
 
             await HelperFunctions.PostAsync(new HttpClient(), apiRequest);
 

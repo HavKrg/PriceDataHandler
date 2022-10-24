@@ -1,0 +1,15 @@
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\bin\Debug\net6.0\PriceDataHandler.exe
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\bin\Debug\net6.0\PriceDataHandler.deps.json
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\bin\Debug\net6.0\PriceDataHandler.runtimeconfig.json
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\bin\Debug\net6.0\PriceDataHandler.dll
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\bin\Debug\net6.0\PriceDataHandler.pdb
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\PriceDataHandler.csproj.AssemblyReference.cache
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\PriceDataHandler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\PriceDataHandler.AssemblyInfoInputs.cache
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\PriceDataHandler.AssemblyInfo.cs
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\PriceDataHandler.csproj.CoreCompileInputs.cache
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\PriceDataHandler.dll
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\refint\PriceDataHandler.dll
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\PriceDataHandler.pdb
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\PriceDataHandler.genruntimeconfig.cache
+C:\Users\Håvard\source\repos\PriceScript\src\PriceDataHandler\obj\Debug\net6.0\ref\PriceDataHandler.dll

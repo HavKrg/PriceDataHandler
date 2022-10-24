@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O2D0DscxD61xXicx+a8+HV7igWvWEpGTCAcAGPIqjuwjIbzulWy36HaPYWde898SadlVJvn7utnQea32wh+41Q==",
+  "dgSpecHash": "kJQplnfCvDhNYJ7ZiQNbn2G801zZnN2Uruxkdc/gILU6KKg+YzpLSGEPa/wkaXn1C4J0wCZr5RoaotFRB8afvg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj",
+  "projectFilePath": "C:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Håvard\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.15.1\\microsoft.visualstudio.azure.containers.tools.targets.1.15.1.nupkg.sha512"
   ],

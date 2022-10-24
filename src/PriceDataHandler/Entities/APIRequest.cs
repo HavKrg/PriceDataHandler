@@ -11,6 +11,7 @@ class APIRequest
         DailyPrices = dailyPrices;
         BaseURI = baseURI;
         AreaId =areaId;
-        Date = date;
+        // Date = date;
+        Date = $"{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day + 1}";
     }
 }

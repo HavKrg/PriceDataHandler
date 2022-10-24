@@ -3,11 +3,14 @@ class Program
 {
     static async Task Main(string[] args)
     {
-
+        var configLocation = args[0];
         var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-        var priceFile = $"{StaticValues.baseLocation}/{args[0]}";
-        var jsonFile = $"{StaticValues.baseLocation}/prices/{StaticValues.storedJsonPricesFileName}";
+        var myConf = JsonSerializer.Deserialize<JsonConfiguration>(new StreamReader(configLocation).ReadToEnd(), jsonOptions);
+        
+        var priceFile = $"{myConf.PriceFile}";
+        var jsonFile = $"{myConf.JsonPriceFileNameFormat}";
+        
 
         try
         {
@@ -19,8 +22,8 @@ class Program
 
             var dailyPrices = HelperFunctions.CreateDailyPrices(priceData);
 
-            await HelperFunctions.PostAsync(new HttpClient(), new APIRequest(dailyPrices, StaticValues.baseURI,
-            StaticValues.areaId, StaticValues.date));
+            await HelperFunctions.PostAsync(new HttpClient(), new APIRequest(dailyPrices, myConf.APIbaseURI,
+            myConf.APIareaId, myConf.APIdate));
 
         }
         catch (System.Exception ex)

@@ -6,8 +6,8 @@ class Program
 
         var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-        var priceFile = $"{StaticValues.baseLocation}\\{args[0]}";
-        var jsonFile = $"{StaticValues.baseLocation}\\prices\\{StaticValues.storedJsonPricesFileName}";
+        var priceFile = $"{StaticValues.baseLocation}/{args[0]}";
+        var jsonFile = $"{StaticValues.baseLocation}/prices/{StaticValues.storedJsonPricesFileName}";
 
         try
         {

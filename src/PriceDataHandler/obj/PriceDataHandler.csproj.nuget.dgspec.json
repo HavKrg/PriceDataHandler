@@ -1,32 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj": {}
+    "c:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj": {
+    "c:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj",
+        "projectUniqueName": "c:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj",
         "projectName": "PriceDataHandler",
-        "projectPath": "C:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj",
+        "projectPath": "c:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\PriceDataHandler.csproj",
         "packagesPath": "C:\\Users\\Håvard\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\obj\\",
+        "outputPath": "c:\\Users\\Håvard\\source\\repos\\PriceScript\\src\\PriceDataHandler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Håvard\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +37,14 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.15.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,7 +56,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.2.22477.23\\RuntimeIdentifierGraph.json"
         }
       }
     }

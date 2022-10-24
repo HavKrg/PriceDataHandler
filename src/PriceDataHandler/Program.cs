@@ -11,15 +11,15 @@ class Program
 
         try
         {
-            var jsonPrices = FormatPriceData(priceFile);
+            var jsonPrices = HelperFunctions.FormatPriceData(priceFile);
 
             await File.WriteAllTextAsync(jsonFile, jsonPrices);
 
             var priceData = JsonSerializer.Deserialize<List<PriceItemBuffer>>(jsonPrices, jsonOptions);
 
-            var dailyPrices = CreateDailyPrices(priceData);
+            var dailyPrices = HelperFunctions.CreateDailyPrices(priceData);
 
-            await PostAsync(new HttpClient(), new APIRequest(dailyPrices, StaticValues.baseURI,
+            await HelperFunctions.PostAsync(new HttpClient(), new APIRequest(dailyPrices, StaticValues.baseURI,
             StaticValues.areaId, StaticValues.date));
 
         }
@@ -30,54 +30,7 @@ class Program
         System.Console.WriteLine();
     }
 
-    public static string FormatPriceData(string fileName)
-    {
-        string pricedata = new StreamReader(fileName).ReadToEnd();
 
-        pricedata = pricedata.Replace("}", "},");
-        pricedata = pricedata.Remove(pricedata.LastIndexOf(","));
-        pricedata = pricedata.Insert(0, "[\n");
-        pricedata = pricedata.Insert(pricedata.Length, "\n]");
-
-        return pricedata;
-    }
-
-    public static DailyPrices CreateDailyPrices(List<PriceItemBuffer> priceData)
-    {
-        var dailyPrices = new DailyPrices();
-
-        foreach (var item in priceData)
-        {
-            var priceItem = new PriceItem(item.Period, item.Price);
-            dailyPrices.Prices.Add(priceItem);
-        }
-
-        return dailyPrices;
-    }
-
-    static async Task PostAsync(HttpClient httpClient, APIRequest apiRequest)
-    {
-        using StringContent jsonContent = new(
-            JsonSerializer.Serialize(apiRequest.DailyPrices),
-            Encoding.UTF8,
-            "application/json");
-
-        try
-        {
-            var response = await httpClient.PostAsync($"{apiRequest.BaseURI}?areaId={apiRequest.AreaId}&date={apiRequest.Date}",
-            jsonContent);
-
-            response.EnsureSuccessStatusCode();
-
-            if (response.StatusCode.ToString() == "OK")
-                System.Console.WriteLine($"{DateTime.Now} : Prices for {apiRequest.Date} were successfully sent to API");
-        }
-        catch (System.Exception ex)
-        {
-
-            System.Console.WriteLine(ex.Message);
-        }
-    }
 }
 
 

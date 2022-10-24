@@ -3,21 +3,18 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        var configLocation = args[0];
-        var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-        System.Console.WriteLine(new StreamReader(configLocation).ReadToEnd());
-        var myConf = JsonSerializer.Deserialize<JsonConfiguration>(new StreamReader(configLocation).ReadToEnd(), jsonOptions);
-        
-        var priceFile = $"{myConf.PriceFile}";
-        var jsonFile = $"{myConf.JsonPriceFileNameFormat}";
-        
+        // var configLocation = args[0];
+        var configLocation = "c:/Pricedata/config.json";
+        var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         try
         {
-            var jsonPrices = HelperFunctions.FormatPriceData(priceFile);
+            var myConf = JsonSerializer.Deserialize<JsonConfiguration>(new StreamReader(configLocation).ReadToEnd(), jsonOptions);
 
-            await File.WriteAllTextAsync(jsonFile, jsonPrices);
+            var jsonPrices = HelperFunctions.FormatPriceData(myConf.PriceFile);
+
+            await File.WriteAllTextAsync(myConf.JsonPriceFileNameFormat, jsonPrices);
 
             var priceData = JsonSerializer.Deserialize<List<PriceItemBuffer>>(jsonPrices, jsonOptions);
 

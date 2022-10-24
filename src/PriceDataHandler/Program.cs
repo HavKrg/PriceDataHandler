@@ -4,7 +4,8 @@ class Program
     static async Task Main(string[] args)
     {
 
-        var configLocation = args[0];
+        // var configLocation = args[0];
+        var configLocation = "c:/Pricedata/config.json";
         var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
         try

@@ -29,6 +29,7 @@ class HelperFunctions
 
     public static async Task PostAsync(HttpClient httpClient, APIRequest apiRequest)
     {
+        System.Console.WriteLine("Starting Post request");
         using StringContent jsonContent = new(
             JsonSerializer.Serialize(apiRequest.DailyPrices),
             Encoding.UTF8,
@@ -36,6 +37,7 @@ class HelperFunctions
 
         try
         {
+            System.Console.WriteLine("sending post request");
             var response = await httpClient.PostAsync($"{apiRequest.BaseURI}?areaId={apiRequest.AreaId}&date={apiRequest.Date}",
             jsonContent);
 
